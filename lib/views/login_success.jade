@@ -1,0 +1,18 @@
+//   Created by maihuy on 25/06/2014.
+
+//   Created by maihuy on 19/06/2014.
+doctype html
+html(lang="en")
+    head
+        title= "Login success"
+    body
+        p this will close shortly
+
+        script(type='text/javascript').
+            //setTimeout(function () {window.close()}, 3000);
+            setTimeout(function () {
+              window.opener.location.href='/';
+              window.close()
+            }, 10);
+
+

@@ -1,0 +1,13 @@
+doctype html
+html(lang="en")
+    head
+        title Login failed
+    body
+        p
+            strong login has failed
+        p Code: #{error.code}
+        p Message: #{error.message}
+        p
+            | Click &nbsp;
+            a(href="#", onclick="window.close()") here
+            |  to close

@@ -1,0 +1,28 @@
+mongo:
+  ## mongodb connection string. See spec [http://docs.mongodb.org/manual/reference/connection-string/]
+  connection: mongodb://localhost:27017/tinizen
+
+http:
+  ## the actual http port that will listen request from this machine
+  port: 9100
+
+
+## log4js log levels
+## note: ^ mean inherit from "all"
+## if log level of a category is not defined here or has a value of '^' it will inherit from logLevel.all
+logLevel:
+  all: DEBUG
+  app.coffee: ^
+  reset: ^
+
+tinizen:
+  base: http://localhost:8889/api
+  dialog_authorize_uri: /dialog/authorize
+  token_uri: /oauth/token
+  get_me: /me
+
+client:
+  id: example_id
+  secret: 7cbe80709c9eab855e14ac10adc250ea
+  name: example_client
+  redirect_uri:  http://localhost:9100/tinizen/callback
