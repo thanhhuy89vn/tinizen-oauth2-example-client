@@ -6,8 +6,8 @@ tinizen-oauth2-example-client
 In order to integrate tiNiZen login/signup with your-app, you will first need to setup a tiNiZen application. To do this, follow the below steps:
 
 ### Some note:
-- This example wrote by coffeescript
-- How to run this problem:
+- This example project wrote by coffeescript
+- How to run this project:
 	- Requirement your machine install: nodejs, npm, coffeescript
 	- Clone this project to your machine\
     - Contact to support and give new config (tiNiZen domain, client id, client secret...)
