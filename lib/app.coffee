@@ -20,24 +20,36 @@ request = require 'request'
 app.use session({ secret: 'example' })
 
 getMe = (token, cb)->
+
+  ## This is example function make request to tiNizen API
+  ## Header of request must be "Authorization: Bearer <access-token>"
   headers = {
     Authorization: "#{token.token_type} #{ token.access_token }"
   }
+
+  ## uri: URL of tiNiZen API, eg: http://tinizen/api/me , get current logged user information
   request.get {
     uri: [config.tinizen.base, config.tinizen.get_me].join '/'
     json: true
     headers,
   }, (err, resp, body) ->
+    ## if success, response from tiNiZen has statuCode 200 and response.body is user information
     return cb err if err?
     return cb null, false if resp.statusCode isnt 200 or !body.account
     cb null, body
 
+
+## This is middleware, filter all request coming, and know this is a Guest or Logged user
 app.use (req, res, next)->
+  ## req.session.token is null
   unless req.session.token
     res.locals.user = req.user = 'guess'
     next()
     return
 
+  ## Ya, this request have access-token, made by logged user
+  ## You can make request with access-token to tiNiZen API to get user information
+  ## getMe is a function to do it :)
   getMe req.session.token, (err, me)->
     return next err if err?
     res.locals.user = req.user = me
