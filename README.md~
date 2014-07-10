@@ -1,11 +1,12 @@
 tinizen-oauth2-example-client
+=============================tinizen-oauth2-example-client
 =============================
 
 In order to integrate tiNiZen login/signup with your site, you will first need to setup a tiNiZen application. To do this, follow the below steps:
 
 1. Register your app to tiNiZen
 
-Please contact with tiNiZen supporter (see contact list). Then they will provide to you `client_id` and `client_secret` for your site.
+Please contact with tiNiZen supporter (see contact list). Then they will provide to you `client_id` and `client_secret`.
 
 
 3. Inserting a tiNiZen login button on your site
@@ -37,7 +38,7 @@ When your-popup-site, it will be redirect to /dialog/authorize of tiNiZen. If yo
 
 `/login-redirect`is simple page with
 
-``` html
+```
 <html>
    <head></head>
    <body>
@@ -75,7 +76,7 @@ Description of dialog authorize URI:
 
 4. Desicion form
 
-If user loggin successful, it will be require user allows your-site can collect certain information from user's tiNiZen Profile (i.e. name, email, point, vnd, etc.)
+
 
 5. 
 

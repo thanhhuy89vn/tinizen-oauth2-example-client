@@ -7,28 +7,14 @@ html(lang="en")
         script(type='text/javascript').
             var loginWindow = null;
             var openTinizenLogin= function() {
-              //loginWindow = window.open('!{dialogAuthorizeURL}');
               loginWindow = window.open('/login-redirect', "loginWindow", "height=600,width=700");
-              /*var i = setInterval(function () {
-                if (loginWindow.closed)
-                  clearInterval(i);
-                  window.location.reload()
-              }, 1e3);*/
             }
-
-
 
         body
         h1 Hello
             span= user.full_name || user
         #container.col
-            if youAreUsingJade
-                p You are amazing
-            else
-                p Get on it!
-            p.
-              Jade is a terse and simple templating language with a
-              strong focus on performance and powerful features.
+            p This is tutorial for using tiNiZen oauth2!
 
             unless user.full_name
                 button#login(onclick="openTinizenLogin()") Login

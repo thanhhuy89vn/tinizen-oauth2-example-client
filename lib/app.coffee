@@ -70,43 +70,6 @@ app.post '/logout', (req, res)->
 app.set 'port', config.http.port
 app.set 'view engine', 'jade'
 app.set 'views', __dirname + '/views'
-#app.set 'view cache', false
-
-
-## Test send email
-
-client =
-  key: "b746fb42c0f8a131a16362abb41a7d38"
-  secret: "88700033cded7e97dd3b8a40e2af0398"
-
-Mailjet = require 'mailjet-sendemail'
-
-mailjet = new Mailjet(client.key, client.secret);
-
-
-#sendText(from, to, subject, text)
-
-sendText("no-reply@tinizen.com",
-['huy.mai@tiniplanet.com', 'thanhhuy89vn@gmail.com'],
-'This is a test !',
-'Well, this is working !')
-
-###client =
-  key: "b746fb42c0f8a131a16362abb41a7d38"
-  secret: "88700033cded7e97dd3b8a40e2af0398"
-
-option =
-  secure: false, ## When true uses https when false it uses http, default is true
-  output: 'json' ## The output type you prefer, default is json, you can choose between php, json, xml, serialize, html, csv
-instance = new Mailjet client.key, client.secret, option
-debugger;
-
-
-instance.sendRequest 'userDomainadd', {domain: "119.81.102.100"}, 'POST', (err, status, data, headers) ->
-  console.log 'Error: ', err
-  console.log 'Status: ', status
-  console.log 'Data: ', data
-  console.log 'Headers: ', headers###
 
 noop = ()->
 module.exports = {
